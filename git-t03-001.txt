@@ -1,0 +1,328 @@
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(master)
+$ git branch
+* master
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(master)
+$ git branch GitNewBranch
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git branch
+  GitNewBranch
+* master
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git branch
+* GitNewBranch
+  master
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (GitNewBranch)
+$ vi file2.txt
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitNewBranch)
+$ git commit -m "added file2.txt"
+[GitNewBranch 4f9d866] added file2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .file2.txt.swp
+
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (GitNewBranch)
+$ git add .
+
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitNewBranch)
+$ git commit -m "added file2.txt"
+[GitNewBranch 4f9d866] added file2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .file2.txt.swp
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (GitNewBranch)
+$ git status
+On branch GitNewBranch
+nothing to commit, working tree clean
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitNewBranch)
+$ git push origin GitNewBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 478 bytes | 95.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'GitNewBranch' on GitHub by visiting:
+remote:      https://github.com/divyeshh/angular-springrest-handson/pull/new/GitNewBranch
+remote:
+To https://github.com/divyeshh/angular-springrest-handson.git
+ * [new branch]      GitNewBranch -> GitNewBranch
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitNewBranch)
+$ git log --oneline GitNewBranch
+4f9d866 (HEAD -> GitNewBranch, origin/GitNewBranch) added file2.txt
+aee8f95 (origin/master, master) first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitNewBranch)
+$ git log --oneline master
+aee8f95 (origin/master, master) first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitNewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git merge GitNewBranch
+Updating aee8f95..4f9d866
+Fast-forward
+ .file2.txt.swp | Bin 0 -> 12288 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .file2.txt.swp
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git log --oneline master
+4f9d866 (HEAD -> master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 (origin/master) first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/divyeshh/angular-springrest-handson.git
+   aee8f95..4f9d866  master -> master
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git branch
+  GitNewBranch
+* master
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git branch GitWork
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git branch
+  GitNewBranch
+  GitWork
+* master
+
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(GitWork)
+$ vi hello.xml
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitWork)
+$ git log --oneline GitWork
+4f9d866 (HEAD -> GitWork, origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitWork)
+$ git log --oneline master
+4f9d866 (HEAD -> GitWork, origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitWork)
+$ git add .
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitWork)
+$ git commit -m "added hello.xml"
+[GitWork 94bcbe4] added hello.xml
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello.xml
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitWork)
+$ git log --oneline GitWork
+94bcbe4 (HEAD -> GitWork) added hello.xml
+4f9d866 (origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (GitWork)
+$ git log --oneline master
+4f9d866 (origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (GitWork)
+$ git checkout master
+Switched to branch 'master'
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ vi hello.xml
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git add .
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git commit -m "added hellow.xml from master branch"
+[master f04c9fe] added hellow.xml from master branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git log --oneline master
+f04c9fe (HEAD -> master) added hellow.xml from master branch
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git log --oneline GitWork
+94bcbe4 (GitWork) added hello.xml
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git diff
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git diff hello.xml
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ vi hello.xml
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git diff hello.xml
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git log --oneline --graph --decorate
+* f04c9fe (HEAD -> master) added hellow.xml from master branch
+* 4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+* aee8f95 first commit
+
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git log --oneline master
+f04c9fe (HEAD -> master) added hellow.xml from master branch
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git commit -m "modified hello.xml from master"
+On branch master
+nothing to commit, working tree clean
+
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git add .
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git commit -m "modified hello.xml from master"
+[master e66e206] modified hello.xml from master
+ 1 file changed, 1 insertion(+)
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git log --oneline master
+f04c9fe (HEAD -> master) added hellow.xml from master branch
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$  git log --oneline GitWork
+94bcbe4 (GitWork) added hello.xml
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR MINGW64 ~/Desktop/911581-Git_handson (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git checkout master
+Switched to branch 'master'
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ git merge GitWork
+CONFLICT (add/add): Merge conflict in hello.xml
+Auto-merging hello.xml
+Automatic merge failed; fix conflicts and then commit the result.
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master|MERGING)
+$ cat hello.xml
+<<<<<<< HEAD
+Data added from master branch
+modified file from master branch
+=======
+Data added from GitWork branch
+>>>>>>> GitWork
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(master|MERGING)
+$ git log --oneline master
+7272fc2 (HEAD -> master) Merge branch 'GitWork'
+f04c9fe added hellow.xml from master branch
+94bcbe4 (GitWork) added hello.xml
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson(master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      hello.xml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master|MERGING)
+$ git add .
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master|MERGING)
+$ git commit -m "hello.xml merged"
+[master dac0d11] hello.xml merged
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master|MERGING)
+$ git log --oneline master
+7272fc2 (HEAD -> master) Merge branch 'GitWork'
+e66e206 modified hello.xml from master
+f04c9fe added hellow.xml from master branch
+94bcbe4 (GitWork) added hello.xml
+4f9d866 (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+aee8f95 first commit
+
+
+Divyesh@LAPTOP-MCA2PCCR  MINGW64 ~/Desktop/911581-git_handson (master)
+$ cat hello.xml
+<<<<<<< HEAD
+Data added from master branch
+modified file from master branch
+=======
+Data added from GitWork branch
+>>>>>>> GitWork
